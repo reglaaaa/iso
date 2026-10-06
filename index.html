@@ -18,7 +18,6 @@ button.on{background:var(--dim);color:#fff;border-color:var(--dim)}
 button.p{background:var(--new);color:#fff;border-color:var(--new)}
 ul{margin:6px 0 0;padding-left:18px}
 </style></head><body>
-<h1>Isometric drawing – step by step</h1>
 <div class="nav" id="m"><button id="ma">📐 Angles</button><button id="ml">📏 Lengths</button></div>
 <svg id="s" viewBox="60 30 1000 960"></svg>
 <div class="box" id="t"></div>
@@ -128,7 +127,7 @@ function draw(){let h='',txt='';const segs=[],boxes=[],used={},all=[];
   h+=`<text x="${ch.c[0]}" y="${ch.c[1]+8}" font-size="26" font-weight="700" text-anchor="middle" style="fill:${col.n}">${n}</text>`});
  if(i===S.length-1)h+=`<text x="640" y="965" font-size="30" font-weight="700" text-anchor="middle" style="fill:${col.f}">ISOMETRIC</text>`;
  svg.innerHTML=h;
- const tb=document.getElementById('t');tb.style.display=mode==='ang'?'none':'block';tb.innerHTML=`<b>${S[i].t}</b> (${i+1}/${S.length})${txt?'<ul>'+txt+'</ul>':''}`;
+ const tb=document.getElementById('t');tb.style.display='none';tb.innerHTML=`<b>${S[i].t}</b> (${i+1}/${S.length})${txt?'<ul>'+txt+'</ul>':''}`;
  ma.className=mode==='ang'?'on':'';ml.className=mode==='len'?'on':'';
  b.disabled=i==0;n.disabled=i==S.length-1}
 const b=document.getElementById('b'),n=document.getElementById('n'),ma=document.getElementById('ma'),ml=document.getElementById('ml');
